@@ -16,8 +16,7 @@
 		<h1>Vil AVF skippe i dag?</h1>
 		<p id="predictor"></p>
 		<script>
-		var d = new Date();
-		d = getDay();
+		var d = new Date().getDay();
 		if(d == 0){
 		document.getElementById("predictor").innerHTML = "Det er mandag. Det betyder at der er 78% chance for at AVF skipper";
 		} else if(d == 1){
