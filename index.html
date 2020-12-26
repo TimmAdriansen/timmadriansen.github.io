@@ -1,75 +1,13 @@
 <html>
 
-	<style>
+<head>
+    <form action="/AVF_Skip_Prediction/index.html">
+        <input type="submit" value="AVF Skip predictor" />
+    </form>
+    <form action="/ChessGame/index.html">
+        <input type="submit" value="Chess Made in Unity" />
+    </form>
 
-		div {
-
-  		width: 300px;
-
-  		border: 5px solid blue;
-
-  		padding: 20px;
-
-  		margin: auto;
-
-		}
-
-		h1 {
-
-  		color: red;
-
-  		text-align: top;
-
-		}
-
-	</style>
-
-	<title>AVF skip</title>
-
-	<div>
-
-		<h1>Vil AVF skippe i dag?</h1>
-
-		<p id="predictor"></p>
-
-		<script>
-
-		var d = new Date().getDay();
-
-		if(d == 1){
-
-		document.getElementById("predictor").innerHTML = "Det er mandag. Det betyder at der er 78% chance for at AVF skipper";
-
-		} else if(d == 2){
-
-		document.getElementById("predictor").innerHTML = "Det er tirsdag. AVF skipper helt sikkert";
-
-		} else if(d == 3){
-
-		document.getElementById("predictor").innerHTML = "Det er onsdag. AVF gav op i går, så han kommer ikke resten af ugen";
-
-		} else if(d == 4){
-
-		document.getElementById("predictor").innerHTML = "Det er torsdag. Er dine initialer AVF?";
-
-		} else if(d == 5){
-
-		document.getElementById("predictor").innerHTML = "Det er fredag. AVF skipper fredagsbar";
-
-		} else if(d == 6){
-
-		document.getElementById("predictor").innerHTML = "Det er lørdag. AVF ligger og fapper";
-
-		} else if(d == 0){
-
-		document.getElementById("predictor").innerHTML = "Det er søndag. Prøv igen i morgen";
-
-		}
-
-		</script>
-
-	</div>
-
-	
+</head>
 
 </html>
