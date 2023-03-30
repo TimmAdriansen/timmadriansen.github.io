@@ -26,10 +26,9 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: calc(100vh - 100px);
+    height: 80vh;
     scroll-snap-align: start;
-    scroll-margin: 100px;
-    margin-bottom: 20px
+    margin-bottom: 200px;
 }
 
 li {
@@ -93,7 +92,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 20px 10%;
 }
 
 .logo {
