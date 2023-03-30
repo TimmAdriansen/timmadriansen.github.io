@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700|Rubik:400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro);
+@import url(https://fonts.googleapis.com/css?family=Nanum+Myeongjo);
+
+:root {
+    --timeToFade: 4s;
+}
+
+body {
+    margin: 0px;
+    background-image: url("assets/images/017-Subtle-light-patterns-Vol04.png");
+}
+
+li {
+    display: inline;
+}
+
+h1 {
+    color: black;
+    font-family: Nanum Myeongjo;
+    margin:  1px;
+}
+
+p {
+    color: black;
+    font-family: Nanum Myeongjo;
+}
+
+.lineUp {
+    animation: 2s anim-lineUp ease-out;
+    animation-delay: calc(.2s * var(--i));
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes anim-lineUp {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li,
+a,
+button {
+    color: black;
+    font-family: Nanum Myeongjo;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    width: 110px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+#wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#content {
+    float: left;
+    position: relative;
+    left: -50%;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-child {
+    display: flex;
+    flex: 0 1 auto;
+    /*border: 2px solid yellow;*/
+    flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+.flex-child:first-child {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.profile {
+    width: 600x;
+    height: 500px;
+    border-radius: 100%;
+    filter: grayscale(100%);
+    animation: fadeIn var(--timeToFade);
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
