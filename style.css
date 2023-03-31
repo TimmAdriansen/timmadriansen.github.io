@@ -186,3 +186,43 @@ header {
         opacity: 1;
     }
 }
+
+#image-track {
+    display: flex;
+    gap: 4vmin;
+    /*position: absolute;*/
+    left: 50%;
+    top: 50%;
+    transform: translate(50%, 25%); 
+    user-select: none; /* -- Prevent image highlighting -- */
+  }
+  
+  #image-track > .hover-img > .image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    border-radius: 10%;
+  }
+
+  #image-track > .hover-img > figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1em;
+    opacity: 0;
+    z-index: 2;
+    transition-delay: 0.1s;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }

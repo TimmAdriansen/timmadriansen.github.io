@@ -5,6 +5,7 @@
     <title>Andreas Timm Adriansen</title>
     <link rel="icon" href="./assets/logotitle.png">
     <link rel="stylesheet" href="style.css">
+    <script src="onhover.js"></script>
 </head>
 
 <body>
@@ -48,16 +49,20 @@
         </section>
         <section id="projects">
             <h1>Projects</h1>
-            <div class="flex-container">
-                <div class="flex-child">
-                    <h1 class='lineUp' style="--i:0">Hi.</h1>
-                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
-                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
-                </div>
-
-                <div class="flex-child">
-                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
-                </div>
+            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+                </figure>
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg" draggable="false" />
+                </figure>
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg" draggable="false" />
+                </figure>
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg" draggable="false" />
+                </figure>
+            </div>
         </section>
         <section id="contact">
             <h1>Contact</h1>
@@ -75,5 +80,6 @@
     </div>
     <!--<script type="module" src="https://cdn.jsdelivr.net/gh/Andreas-V-F/bachelorproject/SPARQLVisualiser.js"></script>-->
 </body>
+<script src="application.js"></script>
 
 </html>
