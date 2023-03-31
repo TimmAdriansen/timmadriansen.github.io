@@ -7,6 +7,12 @@
     --timeToFade: 4s;
 }
 
+
+html {
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-image: url("assets/images/017-Subtle-light-patterns-Vol04.png");
@@ -20,8 +26,10 @@ body {
     height: 100%;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .container::-webkit-scrollbar {
@@ -32,7 +40,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     scroll-snap-align: start;
     margin-bottom: 200px;
 }
@@ -44,7 +52,7 @@ li {
 h1 {
     color: black;
     font-family: Nanum Myeongjo;
-    margin:  1px;
+    margin: 1px;
 }
 
 p {
@@ -95,8 +103,12 @@ button {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
 }
@@ -106,10 +118,13 @@ header {
     width: 110px;
     height: 50px;
     border-radius: 100%;
+    margin-right: auto;
 }
 
 .nav_links {
+    display: flex;
     list-style: none;
+    width: 100%;
 }
 
 .nav_links li {
@@ -143,7 +158,7 @@ header {
     padding: 30px;
     justify-content: center;
     align-items: flex-start;
-    
+
 }
 
 .flex-child:first-child {
