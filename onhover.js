@@ -3,7 +3,9 @@ function onHoverImage(x) {
     let div = x.querySelector(".centered");
     image.style.opacity = "0.7";
     image.style.filter = "grayscale(100%)";
-    showTextHover(div);
+    if(div != null){
+        showTextHover(div);
+    }
 }
 
 function onHoverImageLeave(x) {
@@ -11,7 +13,9 @@ function onHoverImageLeave(x) {
     let div = x.querySelector(".centered");
     image.style.opacity = "1";
     image.style.filter = "grayscale(0%)";
-    hideTextHover(div);
+    if(div != null){
+        hideTextHover(div);
+    }
 }
 
 function showTextHover(div){
