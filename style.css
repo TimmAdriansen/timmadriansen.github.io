@@ -226,3 +226,12 @@ header {
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+
+  .centered {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -30%;
+    opacity: 0;
+  }
