@@ -1,8 +1,10 @@
 const track = document.getElementById("image-track");
+var currentScreen = "";
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+const handleOnDown = e => {if(currentScreen != "projects") return; track.dataset.mouseDownAt = e.clientX;}
 
 const handleOnUp = () => {
+  if(currentScreen != "projects") return;
   track.dataset.mouseDownAt = "0";  
   track.dataset.prevPercentage = track.dataset.percentage;
 }
@@ -29,6 +31,39 @@ const handleOnMove = e => {
     }, { duration: 1200, fill: "forwards" });
   }
 }
+
+document.querySelector('.container').addEventListener('scroll', function(){
+  var top = this.scrollTop;
+  var bottom = top+this.offsetHeight;
+  var arr = [];
+  
+  this.querySelectorAll("section").forEach(function(div){
+    if (
+      (div.offsetTop < top && top <div.offsetTop+div.offsetHeight) ||
+      (div.offsetTop < bottom && bottom <div.offsetTop+div.offsetHeight)
+    ){
+      arr.push(div.id);
+    }
+  });
+  if(arr.length == 1){
+    currentScreen = arr[0];
+  }
+});
+
+
+function onScroll(){
+  track.dataset.percentage = 0;
+  track.animate({
+    transform: `translate(${0+50}%, 25%)`
+  }, { duration: 1200, fill: "forwards" });
+}
+
+function setCurrentScreen(x){
+  currentScreen = x;
+}
+
+
+
 
 /* -- Had to add extra lines for touch events -- */
 

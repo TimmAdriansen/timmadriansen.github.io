@@ -11,12 +11,12 @@
 <body>
     <div class="container">
         <header>
-            <img class="logo" src="./assets/timm_logo.png" alt="logo" onclick="window.location.href='#home'">
+            <img class="logo" src="./assets/timm_logo.png" alt="logo" onclick="window.location.href='#home';setCurrentScreen('home')">
             <nav>
                 <ul class="nav_links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" onclick="setCurrentScreen('about')">About</a></li>
+                    <li><a href="#projects" onclick="setCurrentScreen('projects')">Projects</a></li>
+                    <li><a href="#contact" onclick="setCurrentScreen('contact')">Contact</a></li>
                 </ul>
             </nav>
         </header>
