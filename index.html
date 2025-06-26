@@ -1,146 +1,269 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Andreas Timm Adriansen</title>
-    <link rel="icon" href="./assets/logotitle.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="onhover.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andreas Timm Profile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Intro overlay */
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #intro img {
+      width: 200px;
+      animation: spin-intro 2s ease-in-out forwards;
+    }
+
+    @keyframes spin-intro {
+      from {
+        transform: rotate(0deg);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      to {
+        transform: rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Content wrapper, hidden until intro ends */
+    #content {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    #content.show {
+      opacity: 1;
+    }
+
+    .carousel-container {
+      perspective: 1000px;
+      width: 100%;
+      max-width: 360px;
+      height: 260px;
+      margin: 2rem 0;
+      position: relative;
+      touch-action: pan-y;
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 140px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      left: 50%;
+      transform-origin: center center;
+      transform: translateX(-50%) rotateY(var(--angle)) translateZ(160px) scale(1);
+      opacity: 0.8;
+      transition: transform 0.5s, opacity 0.5s;
+      cursor: pointer;
+    }
+
+    .carousel img.active {
+      transform: translateX(-50%) rotateY(var(--angle)) translateZ(160px) scale(1.1);
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .swipe-hint {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .swipe-hint.hide {
+      opacity: 0;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .location {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: #444;
+      max-width: 360px;
+      text-align: center;
+      margin: 1rem auto;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .links img {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <img class="logo" src="./assets/timm_logo.png" alt="logo"
-                onclick="window.location.href='#home';setCurrentScreen('home')">
-            <nav>
-                <ul class="nav_links">
-                    <li><a href="#about" onclick="setCurrentScreen('about')">About</a></li>
-                    <li><a href="#projects" onclick="setCurrentScreen('projects')">Projects</a></li>
-                    <li><a href="#contact" onclick="setCurrentScreen('contact')">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section id="home">
-            <h1>Home</h1>
-            <div class="flex-container">
-                <div class="flex-child">
-                    <h1 class='lineUp' style="--i:0">Hi.</h1>
-                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
-                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
-                </div>
+  <!-- Intro overlay with rotating logo -->
+  <div id="intro">
+    <img src="timmtimmred.png" alt="Logo" />
+  </div>
 
-                <div class="flex-child">
-                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
-                </div>
-            </div>
-        </section>
-        <section id="about">
-            <h1>About</h1>
-            <div class="flex-container">
-                <div class="flex-child">
-                    <h1 class='lineUp' style="--i:0">Hi.</h1>
-                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
-                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
-                </div>
-
-                <div class="flex-child">
-                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
-                </div>
-        </section>
-        <section id="projects">
-            <h1>Projects</h1>
-            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
-                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
-                        draggable="false" />
-                    <div class="centered">
-                        <div class="title">
-                            <h1 style="color: white;">Example Project</h1>
-                        </div>
-                        <div class="descbox">
-                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
-                                class="social-round-icon fa-icon">
-                                <i class="fa fa-github fa-lg" style="color: white;"></i>
-                            </a>
-                            <br><br>
-                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
-                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
-                        </div>
-                    </div>
-                </figure>
-                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
-                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
-                        draggable="false" />
-                    <div class="centered">
-                        <div class="title">
-                            <h1 style="color: white;">Example Project</h1>
-                        </div>
-                        <div class="descbox">
-                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
-                                class="social-round-icon fa-icon">
-                                <i class="fa fa-github fa-lg" style="color: white;"></i>
-                            </a>
-                            <br><br>
-                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
-                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
-                        </div>
-                    </div>
-                </figure>
-                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
-                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
-                        draggable="false" />
-                    <div class="centered">
-                        <div class="title">
-                            <h1 style="color: white;">Example Project</h1>
-                        </div>
-                        <div class="descbox">
-                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
-                                class="social-round-icon fa-icon">
-                                <i class="fa fa-github fa-lg" style="color: white;"></i>
-                            </a>
-                            <br><br>
-                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
-                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
-                        </div>
-                    </div>
-                </figure>
-                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
-                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
-                        draggable="false" />
-                    <div class="centered">
-                        <div class="title">
-                            <h1 style="color: white;">Example Project</h1>
-                        </div>
-                        <div class="descbox">
-                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
-                                class="social-round-icon fa-icon">
-                                <i class="fa fa-github fa-lg" style="color: white;"></i>
-                            </a>
-                            <br><br>
-                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
-                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-        </section>
-        <section id="contact">
-            <h1>Contact</h1>
-            <div class="flex-container">
-                <div class="flex-child">
-                    <h1 class='lineUp' style="--i:0">Hi.</h1>
-                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
-                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
-                </div>
-
-                <div class="flex-child">
-                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
-                </div>
-        </section>
+  <!-- Main content, hidden until intro finishes -->
+  <div id="content">
+    <div class="carousel-container" id="container">
+      <div class="carousel" id="carousel">
+        <img src="640x800_71b8ceb2-2b6c-4bb0-90cf-0c6e67822608.jpg" alt="1" style="--angle: 0deg" />
+        <img src="3yl7j5q9n4_WEB_288447.jpg" alt="2" style="--angle: 60deg" />
+        <img src="85120553.webp" alt="3" style="--angle: 120deg" />
+        <img src="Giant_Panda_2004-03-2.jpg" alt="4" style="--angle: 180deg" />
+        <img src="images.jpg" alt="5" style="--angle: 240deg" />
+        <img src="red_panda_lead.jpg" alt="6" style="--angle: 300deg" />
+      </div>
+      <div class="swipe-hint" id="hint">← Swipe →</div>
     </div>
-    <!--<script type="module" src="https://cdn.jsdelivr.net/gh/Andreas-V-F/bachelorproject/SPARQLVisualiser.js"></script>-->
+
+    <div class="profile">
+      <div class="name">Andreas Timm, 25</div>
+      <div class="location">København</div>
+    </div>
+
+    <div class="description">
+      Super sej, cool, nice og mega humble gut
+    </div>
+
+    <div class="links">
+      <a href="https://tinder.com/@andreastimm" target="_blank" rel="noopener noreferrer">
+        <img src="tinder.png" alt="Tinder logo" />
+      </a>
+      <a href="https://www.instagram.com/andreastimmadriansen/" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" />
+      </a>
+    </div>
+
+    <div style="margin-top:1rem; text-align:center;">
+      <strong>Du må også gerne bare sige hej :)</strong>
+    </div>
+  </div>
+
+  <script>
+    const intro = document.getElementById('intro');
+    const content = document.getElementById('content');
+    // After intro animation, remove intro and fade in content
+    intro.addEventListener('animationend', () => {
+      intro.remove();
+      content.classList.add('show');
+    });
+
+    const carousel = document.getElementById('carousel');
+    const container = document.getElementById('container');
+    const hint = document.getElementById('hint');
+    const images = carousel.querySelectorAll('img');
+    const total = images.length;
+    let rotation = 0;
+    let startX = 0;
+    let isDragging = false;
+    const threshold = 30;
+
+    const emphasize = () => {
+      const idx = ((-rotation / 60) % total + total) % total;
+      images.forEach((img, i) => img.classList.toggle('active', i === idx));
+    };
+    const update = () => { carousel.style.transform = `rotateY(${rotation}deg)`; emphasize(); };
+
+    const onStart = e => { isDragging = true; startX = e.pageX || e.touches[0].pageX; };
+    const onMove = e => { if (isDragging) e.preventDefault(); };
+    const onEnd = e => {
+      if (!isDragging) return;
+      const endX = e.pageX || (e.changedTouches && e.changedTouches[0].pageX);
+      const diff = endX - startX;
+      if (Math.abs(diff) > threshold) rotation += diff < 0 ? -60 : 60;
+      update(); isDragging = false;
+    };
+
+    ['mousedown', 'touchstart'].forEach(evt => container.addEventListener(evt, onStart));
+    ['mousemove', 'touchmove'].forEach(evt => container.addEventListener(evt, onMove));
+    ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(evt => container.addEventListener(evt, onEnd));
+    container.addEventListener('click', e => {
+      if (isDragging) return;
+      const { left, width } = container.getBoundingClientRect();
+      rotation += e.clientX > left + width / 2 ? -60 : 60;
+      update();
+    });
+
+    setTimeout(() => hint.classList.add('hide'), 2000);
+    update();
+  </script>
 </body>
-<script src="application.js"></script>
 
 </html>

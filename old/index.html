@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Andreas Timm Adriansen</title>
+    <link rel="icon" href="./assets/logotitle.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="onhover.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img class="logo" src="./assets/timm_logo.png" alt="logo"
+                onclick="window.location.href='#home';setCurrentScreen('home')">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="#about" onclick="setCurrentScreen('about')">About</a></li>
+                    <li><a href="#projects" onclick="setCurrentScreen('projects')">Projects</a></li>
+                    <li><a href="#contact" onclick="setCurrentScreen('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="home">
+            <h1>Home</h1>
+            <div class="flex-container">
+                <div class="flex-child">
+                    <h1 class='lineUp' style="--i:0">Hi.</h1>
+                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
+                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
+                </div>
+
+                <div class="flex-child">
+                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h1>About</h1>
+            <div class="flex-container">
+                <div class="flex-child">
+                    <h1 class='lineUp' style="--i:0">Hi.</h1>
+                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
+                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
+                </div>
+
+                <div class="flex-child">
+                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
+                </div>
+        </section>
+        <section id="projects">
+            <h1>Projects</h1>
+            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
+                        draggable="false" />
+                    <div class="centered">
+                        <div class="title">
+                            <h1 style="color: white;">Example Project</h1>
+                        </div>
+                        <div class="descbox">
+                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
+                                class="social-round-icon fa-icon">
+                                <i class="fa fa-github fa-lg" style="color: white;"></i>
+                            </a>
+                            <br><br>
+                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
+                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
+                        draggable="false" />
+                    <div class="centered">
+                        <div class="title">
+                            <h1 style="color: white;">Example Project</h1>
+                        </div>
+                        <div class="descbox">
+                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
+                                class="social-round-icon fa-icon">
+                                <i class="fa fa-github fa-lg" style="color: white;"></i>
+                            </a>
+                            <br><br>
+                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
+                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
+                        draggable="false" />
+                    <div class="centered">
+                        <div class="title">
+                            <h1 style="color: white;">Example Project</h1>
+                        </div>
+                        <div class="descbox">
+                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
+                                class="social-round-icon fa-icon">
+                                <i class="fa fa-github fa-lg" style="color: white;"></i>
+                            </a>
+                            <br><br>
+                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
+                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="hover-img" onmouseover="onHoverImage(this)" onmouseleave="onHoverImageLeave(this)">
+                    <img class="image" src="./assets/upcoming-banner-speech-bubble-sign-186701335.jpg"
+                        draggable="false" />
+                    <div class="centered">
+                        <div class="title">
+                            <h1 style="color: white;">Example Project</h1>
+                        </div>
+                        <div class="descbox">
+                            <a href="https://github.com/TimmAdriansen/timmadriansen.github.io"
+                                class="social-round-icon fa-icon">
+                                <i class="fa fa-github fa-lg" style="color: white;"></i>
+                            </a>
+                            <br><br>
+                            <p style="font-size: 15px; color: white;">Portfolio website for showcasing myself.</p>
+                            <p style="font-size: 10px; color: white;">HTML, CSS, JavaScript</h1>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <div class="flex-container">
+                <div class="flex-child">
+                    <h1 class='lineUp' style="--i:0">Hi.</h1>
+                    <h1 class='lineUp' style="--i:5">I'm Andreas Timm.</h1>
+                    <p class='lineUp' style="--i:10">Software engineering student at Southern University of Denmark.</p>
+                </div>
+
+                <div class="flex-child">
+                    <img class="profile" src="./assets/timmbil.jpg" alt="profile">
+                </div>
+        </section>
+    </div>
+    <!--<script type="module" src="https://cdn.jsdelivr.net/gh/Andreas-V-F/bachelorproject/SPARQLVisualiser.js"></script>-->
+</body>
+<script src="application.js"></script>
+
+</html>
